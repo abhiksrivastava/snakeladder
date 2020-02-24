@@ -18,10 +18,18 @@ function check_options()
    $LADDER)
          echo "Ladder"
          pos=$(( $pos + $randomCheck ))
+         if [ $pos -gt $WIN_POS ]
+         then
+            pos=$(( $pos - $randomCheck ))
+         fi
          ;;
    $SNAKE)
          echo "Snake"
          pos=$(( $pos - $randomCheck ))
+         if [ $pos -lt $player_1_start_pos ]
+         then
+            pos=$player_1_start_pos
+         fi
          ;;
    esac
 }
