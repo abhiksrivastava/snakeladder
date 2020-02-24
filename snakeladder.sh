@@ -26,3 +26,8 @@ function check_options()
    esac
 }
 
+while [ $pos -lt $WIN_POS ]
+do
+   roll
+   check_options
+done
