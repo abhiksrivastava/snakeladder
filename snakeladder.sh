@@ -7,5 +7,22 @@ function roll()
    echo "When we throw the die $randomCheck comes"
    ((totalrandomCheck++))
 }
-
+function check_options()
+{
+   option=$(( RANDOM % 3 ))
+   case $option in
+   $NO_PLAY)
+         echo "No Play"
+         pos=$pos
+         ;;
+   $LADDER)
+         echo "Ladder"
+         pos=$(( $pos + $randomCheck ))
+         ;;
+   $SNAKE)
+         echo "Snake"
+         pos=$(( $pos - $randomCheck ))
+         ;;
+   esac
+}
 
